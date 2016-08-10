@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/contact'
   post 'home/form'
+  get 'home/matching'
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

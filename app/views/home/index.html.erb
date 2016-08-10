@@ -31,36 +31,8 @@
 						<ul id="menu">
 							<li class="active"><a href="#">Home</a></li>
 							<li><a href="/home/about">About</a></li>
-							<li>
-								<a href="#">Pages</a>
-								<ul>
-									<li>
-										<a href="#">Masonry</a>
-										<ul>
-											<li><a href="index2.html">2 Column</a></li>
-											<li><a href="#">3 Column</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Blog</a>
-										<ul>
-											<li><a href="journal-grid.html">Grid</a></li>
-											<li><a href="journal-full.html">Full Width</a></li>
-											<li><a href="journal.html">Classic</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Portfolio</a>
-										<ul>
-											<li><a href="portfolio.html">2 Column</a></li>
-											<li><a href="portfolio-3.html">3 Column</a></li>
-											<li><a href="portfolio-4.html">4 Column</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
 							<li><a href="/home/contact">Contact</a></li>
-							<li><a href="journal.html">Matching</a></li>
+							<li><a href="/home/matching">Matching</a></li>
 							<li>
 							 <% if user_signed_in? %> 
                                  <li><a class="page-scroll" href="users/edit"><%= current_user.email %></a></li>
@@ -73,8 +45,7 @@
 						</ul>
 					</nav>
 				</header>
-				<br>
-				<a href="/home/write_post">글쓰기</a>
+
 				
 				<div class="page-title">
 					<div class="row">

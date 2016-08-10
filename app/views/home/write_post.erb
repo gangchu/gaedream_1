@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<!-- Document Settings -->
@@ -19,8 +20,8 @@
 			<div class="container">
 				<header>
 					<div class="logo">
-						<a href="index.html">
-						<img src="http://placehold.it/95x20" alt="">
+						<a href="/home/index">
+						<img src="<%= asset_path 'logo.jpg'%>" alt="">
 						</a>
 					</div>
 					<div class="mobile-menu">
@@ -28,39 +29,19 @@
 					</div>
 					<nav>
 						<ul id="menu">
-							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="about.html">About</a></li>
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="/home/about">About</a></li>
+							<li><a href="/home/contact">Contact</a></li>
+							<li><a href="/home/matching">Matching</a></li>
 							<li>
-								<a href="#">Pages</a>
-								<ul>
-									<li>
-										<a href="#">Masonry</a>
-										<ul>
-											<li><a href="index2.html">2 Column</a></li>
-											<li><a href="index.html">3 Column</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Blog</a>
-										<ul>
-											<li><a href="journal-grid.html">Grid</a></li>
-											<li><a href="journal-full.html">Full Width</a></li>
-											<li><a href="journal.html">Classic</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Portfolio</a>
-										<ul>
-											<li><a href="portfolio.html">2 Column</a></li>
-											<li><a href="portfolio-3.html">3 Column</a></li>
-											<li><a href="portfolio-4.html">4 Column</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="journal.html">Journal</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="#">Buy now!</a></li>
+							 <% if user_signed_in? %> 
+                                 <li><a class="page-scroll" href="users/edit"><%= current_user.email %></a></li>
+				     		   	  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }%></li>
+							 <% else %>
+    							 <li><%= link_to "SignUp", new_user_registration_path %></li>
+    				    		 <li><%= link_to "Login", new_user_session_path%></li>
+    					     <% end %>
+    					     </li>
 						</ul>
 					</nav>
 				</header>
